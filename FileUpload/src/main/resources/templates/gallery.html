@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Gallery</title>
+  
+  <style>
+    
+    body {
+    
+    justify-content: center;
+    display: flex;
+    
+    }
+    
+    table {
+      border-collapse: collapse;
+      border: 1px solid grey;
+      display: inline;
+    
+    }
+    
+    tr, th, td {
+       border-collapse: collapse;
+      border: 1px solid grey;
+      width: max-width;
+      text-align: center;
+      font-size: 20px;
+      padding: 10px;
+      
+}
+  
+  th {
+     background: black;
+     color: white;
+  
+  
+  }
+  
+  
+  </style>
+
+</head>
+<body>
+
+   <table>
+     <thead>
+       <tr>
+           <th th:text="${username} + ' Image Gallery' "></th>
+       </tr>
+       
+     
+     </thead>
+     <tbody>
+         <tr th:each="paths : ${path}">
+          <td>
+            <img alt="" th:src="@{${paths}}" width="400px" height="200px">
+          </td>
+         
+         </tr>
+     
+     </tbody>
+   
+   </table>
+
+</body>
+</html>
